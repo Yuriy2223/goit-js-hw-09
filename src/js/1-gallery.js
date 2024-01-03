@@ -89,7 +89,11 @@ const initGallery = images => {
   const galleryItems = images.map(createGalleryItem).join('');
   gallery.insertAdjacentHTML('beforeend', galleryItems);
 
-  
+  const lightbox = new SimpleLightbox('.gallery a', {
+    captionsData: 'alt',
+    captionDelay: 250,
+    captionPosition: 'bottom',
+  });
 
   // gallery.addEventListener('click', event => {
   //   if (event.target.nodeName !== 'IMG') return;
@@ -98,13 +102,5 @@ const initGallery = images => {
   // });
 };
 
-
 // Виклик функції
 initGallery(images);
-
-
-const lightbox = new SimpleLightbox('.gallery a', {
-  captionsData: 'alt',
-  captionDelay: 250,
-  captionPosition: 'bottom',
-});
