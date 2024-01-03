@@ -10,5 +10,5 @@
       />
     </a>
   </li>
-`,l=a=>{const t=document.querySelector(".gallery"),i=a.map(s).join("");t.insertAdjacentHTML("beforeend",i)};new r(".gallery a",{captionsData:"alt",captionDelay:250,captionPosition:"bottom"});l(c);
+`,l=a=>{const t=document.querySelector(".gallery"),i=a.map(s).join("");t.insertAdjacentHTML("beforeend",i)};l(c);new r(".gallery a",{captionsData:"alt",captionDelay:250,captionPosition:"bottom"});
 //# sourceMappingURL=commonHelpers.js.map
