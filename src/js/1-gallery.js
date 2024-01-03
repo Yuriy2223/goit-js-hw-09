@@ -1,7 +1,3 @@
-// Імпорт бібліотеки SimpleLightbox та її стилів
-import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
-
 const images = [
   {
     preview:
@@ -95,12 +91,16 @@ const initGallery = images => {
     captionPosition: 'bottom',
   });
 
-  gallery.addEventListener('click', event => {
-    if (event.target.nodeName !== 'IMG') return;
-    event.preventDefault();
-    lightbox.open();
-  });
+  // gallery.addEventListener('click', event => {
+  //   if (event.target.nodeName !== 'IMG') return;
+  //   event.preventDefault();
+  //   lightbox.open();
+  // });
 };
 
-// Виклик функції 
+// Імпорт бібліотеки SimpleLightbox та її стилів
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
+// Виклик функції
 initGallery(images);
