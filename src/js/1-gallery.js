@@ -77,7 +77,7 @@ const createGalleryItem = ({ preview, original, description }) => `
         src="${preview}"
         data-source="${original}"
         alt="${description}"
-        width="360" 
+
       />
     </a>
   </li>
