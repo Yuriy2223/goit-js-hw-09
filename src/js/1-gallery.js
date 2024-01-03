@@ -77,7 +77,7 @@ const createGalleryItem = ({ preview, original, description }) => `
         src="${preview}"
         data-source="${original}"
         alt="${description}"
-        width="500" 
+        width="360" 
       />
     </a>
   </li>
@@ -95,12 +95,13 @@ const initGallery = images => {
     captionPosition: 'bottom',
   });
 
-  // gallery.addEventListener('click', event => {
-  //   if (event.target.nodeName !== 'IMG') return;
-  //   event.preventDefault();
-  //   lightbox.open();
-  // });
 };
 
 // Виклик функції
 initGallery(images);
+
+// gallery.addEventListener('click', event => {
+  //   if (event.target.nodeName !== 'IMG') return;
+  //   event.preventDefault();
+  //   lightbox.open();
+  // });
