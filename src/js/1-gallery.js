@@ -1,3 +1,7 @@
+// Імпорт бібліотеки SimpleLightbox та її стилів
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
 const images = [
   {
     preview:
@@ -85,22 +89,20 @@ const initGallery = images => {
   const galleryItems = images.map(createGalleryItem).join('');
   gallery.insertAdjacentHTML('beforeend', galleryItems);
 
-  const lightbox = new SimpleLightbox('.gallery a', {
-    captionsData: 'alt',
-    captionDelay: 250,
-    captionPosition: 'bottom',
-  });
+  
 
   // gallery.addEventListener('click', event => {
   //   if (event.target.nodeName !== 'IMG') return;
   //   event.preventDefault();
   //   lightbox.open();
   // });
-};
 
-// Імпорт бібліотеки SimpleLightbox та її стилів
-import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
+  const lightbox = new SimpleLightbox('.gallery a', {
+    captionsData: 'alt',
+    captionDelay: 250,
+    captionPosition: 'bottom',
+  });
+};
 
 // Виклик функції
 initGallery(images);
