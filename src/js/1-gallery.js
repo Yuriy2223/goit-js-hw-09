@@ -95,11 +95,11 @@ const initGallery = images => {
     captionPosition: 'bottom',
   });
 
-  // gallery.addEventListener('click', event => {
-  //   if (event.target.nodeName !== 'IMG') return;
-  //   event.preventDefault();
-  //   lightbox.open();
-  // });
+  gallery.addEventListener('click', event => {
+    if (event.target.nodeName !== 'IMG') return;
+    event.preventDefault();
+    lightbox.open();
+  });
 };
 
 // Виклик функції
