@@ -98,11 +98,13 @@ const initGallery = images => {
   // });
 };
 
+
+// Виклик функції
+initGallery(images);
+
+
 const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
   captionPosition: 'bottom',
 });
-
-// Виклик функції
-initGallery(images);
