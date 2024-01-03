@@ -6,7 +6,7 @@
         src="${a}"
         data-source="${t}"
         alt="${i}"
-        width="500" 
+        width="360" 
       />
     </a>
   </li>
