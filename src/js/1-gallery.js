@@ -1,4 +1,3 @@
-// Імпорт бібліотеки SimpleLightbox та її стилів
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
@@ -68,7 +67,6 @@ const images = [
   },
 ];
 
-// Створення елемента галереї
 const createGalleryItem = ({ preview, original, description }) => `
   <li class="gallery-item">
     <a class="gallery-link" href="${original}">
@@ -77,13 +75,12 @@ const createGalleryItem = ({ preview, original, description }) => `
         src="${preview}"
         data-source="${original}"
         alt="${description}"
-        width="500" 
+        width="360" 
       />
     </a>
   </li>
 `;
 
-// Ініціалізація галереї
 const initGallery = images => {
   const gallery = document.querySelector('.gallery');
   const galleryItems = images.map(createGalleryItem).join('');
@@ -96,11 +93,4 @@ const initGallery = images => {
   });
 };
 
-// Виклик функції
 initGallery(images);
-
-// gallery.addEventListener('click', event => {
-//   if (event.target.nodeName !== 'IMG') return;
-//   event.preventDefault();
-//   lightbox.open();
-// });

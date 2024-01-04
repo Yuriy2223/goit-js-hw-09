@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .body-gallery {
   margin: 24px 156px;
 }
