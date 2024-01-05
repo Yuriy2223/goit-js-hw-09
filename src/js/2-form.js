@@ -1,22 +1,27 @@
 const form = document.querySelector('.feedback-form');
 const { email: inputEmail, message: inputMessage } = form.elements;
 
-const formData = JSON.parse(localStorage.getItem('feedback-form-state')) || {};
+let formData = JSON.parse(localStorage.getItem('feedback-form-state')) || {};
 
-inputEmail.value = formData.email || '';
-inputMessage.value = formData.message || '';
+inputEmail.value = formData.email ? formData.email.trim() : '';
+inputMessage.value = formData.message ? formData.message.trim() : '';
 
 form.addEventListener('input', ({ target }) => {
-  formData[target.name] = target.value;
+  formData[target.name] = target.value.trim();
   localStorage.setItem('feedback-form-state', JSON.stringify(formData));
 });
 
 form.addEventListener('submit', evt => {
   evt.preventDefault();
 
-  console.log(formData);
+  if (inputEmail.value.trim() && inputMessage.value.trim()) {
+    console.log(formData);
 
-  inputEmail.value = '';
-  inputMessage.value = '';
-  localStorage.removeItem('feedback-form-state');
+    inputEmail.value = '';
+    inputMessage.value = '';
+    formData = {};
+    localStorage.removeItem('feedback-form-state');
+  } else {
+    alert('Please fill out both fields of the form before submitting.');
+  }
 });
