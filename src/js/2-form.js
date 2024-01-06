@@ -3,8 +3,14 @@ const { email: inputEmail, message: inputMessage } = form.elements;
 
 let formData = JSON.parse(localStorage.getItem('feedback-form-state')) || {};
 
-inputEmail.value = formData.email ? formData.email.trim() : '';
-inputMessage.value = formData.message ? formData.message.trim() : '';
+inputEmail.value =
+  formData.email && typeof formData.email === 'string'
+    ? formData.email.trim()
+    : '';
+inputMessage.value =
+  formData.message && typeof formData.message === 'string'
+    ? formData.message.trim()
+    : '';
 
 form.addEventListener('input', ({ target }) => {
   formData[target.name] = target.value.trim();
